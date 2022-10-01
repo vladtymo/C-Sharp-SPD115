@@ -14,7 +14,6 @@ namespace c_sharp_first_app
             // snippet: cw + TAB = Console.WriteLine();
             Console.WriteLine();
 
-            
             Console.WriteLine("\n\t\'!!!\'"); // with escape
             Console.WriteLine(@"\n\t\'!!!\'"); // without escape
 
