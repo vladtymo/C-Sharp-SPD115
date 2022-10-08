@@ -33,6 +33,13 @@ namespace c_sharp_first_app
             float temperature = float.Parse(Console.ReadLine());
 
             Console.WriteLine($"{temperature}°C = {(temperature * 9/5) + 32}°F");
+
+            // read pressed key
+            Console.Write("Press any key: ");
+
+            ConsoleKeyInfo key = Console.ReadKey();
+            if (key.Key == ConsoleKey.F12)
+                Console.WriteLine("F12 - Have a good day!");
         }
     }
 }

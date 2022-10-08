@@ -9,6 +9,8 @@ namespace _04_arrays
         {
             // --------------- Arrays
             int[] numbers = new int[] { 6, 1, 3, 10, 33 };
+            // shorter form
+            double[] koefs = { 2.2, 5.2, 12.1, 67.8 };
 
             Console.WriteLine("Item count: " + numbers.Length);
 
