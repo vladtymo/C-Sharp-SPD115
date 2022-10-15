@@ -46,3 +46,19 @@ if (username != null)
 
 // ? - null-condition operator
 username?.ToUpper();
+
+// ---------------- DateTime
+
+DateTime specificDate = new DateTime(2022, 10, 15, 17, 36, 59);
+DateTime today = DateTime.Now;
+
+Console.WriteLine("Today: " + today);
+Console.WriteLine("Today: " + today.ToString("dddd-dd hh:mm"));
+
+Console.WriteLine("Today: " + today.ToLongDateString());
+Console.WriteLine("Today: " + today.ToShortDateString());
+
+Console.WriteLine("Today: " + today.ToLongTimeString());
+Console.WriteLine("Today: " + today.ToShortTimeString());
+
+Console.WriteLine("+ 2 seconds = " + today.AddSeconds(2));
