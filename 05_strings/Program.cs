@@ -51,8 +51,6 @@
             
             Console.WriteLine($"Original: |{email}|");
             Console.WriteLine($"Trimmed: |{email.Trim()}|");
-
-
         }
     }
 }
