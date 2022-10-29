@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "05_strings", "05_strings\05
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "06_classes", "06_classes\06_classes.csproj", "{7047A063-2013-400F-A472-66CFB33A33E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07_structures", "07_structures\07_structures.csproj", "{08E7630B-456E-4A31-9639-C971DA206EEC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "07_structures", "07_structures\07_structures.csproj", "{08E7630B-456E-4A31-9639-C971DA206EEC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08_operator_overloading", "08_operator_overloading\08_operator_overloading.csproj", "{9EE31FC1-0362-4F9B-B716-D39085ACCF6C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{08E7630B-456E-4A31-9639-C971DA206EEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08E7630B-456E-4A31-9639-C971DA206EEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{08E7630B-456E-4A31-9639-C971DA206EEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9EE31FC1-0362-4F9B-B716-D39085ACCF6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EE31FC1-0362-4F9B-B716-D39085ACCF6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EE31FC1-0362-4F9B-B716-D39085ACCF6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EE31FC1-0362-4F9B-B716-D39085ACCF6C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
