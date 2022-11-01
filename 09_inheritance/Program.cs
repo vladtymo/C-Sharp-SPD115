@@ -19,7 +19,9 @@
             Console.WriteLine("Birthdate: " + Birthdate.ToLongDateString());
             Console.WriteLine("Country: " + Country);
         }
-        public void ShowTypeName()
+
+        // you can override virtual methods in the derived classes
+        public virtual void ShowTypeName()
         {
             Console.WriteLine("My type is class Person!");
         }
@@ -41,13 +43,13 @@
             if (AverageMark >= 10) Console.WriteLine("Bouses: 100$");
             else Console.WriteLine("No bonuses!");
         }
-        public void ShowInfo()
+        public new void ShowInfo()
         {
             base.ShowInfo();
             Console.WriteLine("Average mark: " + AverageMark);
             Console.WriteLine("Specialisation: " + Specialisation);
         }
-        public void ShowTypeName()
+        public override void ShowTypeName()
         {
             Console.WriteLine("My type is class Student!");
         }
@@ -61,16 +63,31 @@
         {
             Console.WriteLine("Paid some taxes!");
         }
+        public override void ShowTypeName()
+        {
+            Console.WriteLine("My type is class Employee!");
+        }
     }
 
     public class Manager : Employee
     {
         public string ManagementArea { get; set; }
-    }
 
+        public override void ShowTypeName()
+        {
+            Console.WriteLine("My type is class Manager!");
+        }
+    }
 
     class Program
     {
+        private static void ShowAge(Person person)
+        {
+            // age = current year - birth year 
+            int age = DateTime.Now.Year - person.Birthdate.Year;
+            Console.WriteLine($"{person.Name} has {age} years old.");
+        }
+
         static void Main(string[] args)
         {
             Person p = new Person()
@@ -90,16 +107,21 @@
             st.ShowInfo();
             st.ShowBonuses();
 
-            Manager m = new Manager();
+            Manager m = new Manager()
+            {
+                Birthdate = new DateTime(1988, 3, 6),
+                Name = "Nikolia"
+            };
             // manager has all the members of the employee and person classes
 
             ///////////////// new vs override
-            Person person = p;
+            Person person = st;
 
-            person.ShowTypeName(); // from Person class (new)
-            person.ShowInfo();     // from Student class (override)
+            Console.WriteLine("----------- [new] vs [override] keywords -----------");
+            person.ShowInfo();      // from Person class (new)
+            person.ShowTypeName();  // from Student class (override)
 
-            //////////////// array of the classes which based on Person
+            ////////////////// array of the classes which based on Person
             Person[] people = new Person[]
             {
                 new Person("Vikrotia"),
@@ -107,6 +129,15 @@
                 new Employee(),
                 new Manager()
             };
+
+            foreach (var item in people)
+            {
+                Console.WriteLine("______________________");
+                item.ShowTypeName();
+                item.ShowInfo();
+            }
+
+            ShowAge(m);
         }
     }
 }
