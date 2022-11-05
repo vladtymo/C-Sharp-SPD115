@@ -78,6 +78,36 @@
         }
     }
 
+    interface IA
+    {
+        void ShowA();
+    }
+    interface IB
+    {
+        void ShowB();
+    }
+    interface IC : IA, IB
+    {
+        void ShowC();
+    }
+    class SuperClass : IC
+    {
+        public void ShowA()
+        {
+            Console.WriteLine("Method A!");
+        }
+
+        public void ShowB()
+        {
+            Console.WriteLine("Method B!");
+        }
+
+        public void ShowC()
+        {
+            Console.WriteLine("Method C!");
+        }
+    }
+
     internal class Program
     {
         public static void ShowVideo(IScreen screen)
@@ -108,6 +138,12 @@
             };
 
             screens[1].TurnOn();
+
+            // interface iheritance
+            SuperClass superClass = new SuperClass();
+            superClass.ShowA();
+            superClass.ShowB();
+            superClass.ShowC();
         }
     }
 }
