@@ -1,5 +1,7 @@
 ﻿// ----------- Delegates -----------
 // create delegate: delegate return_type Name(parameters...);
+using static System.Net.Mime.MediaTypeNames;
+
 delegate void AriphmeticOperation(double a, double b);
 
 delegate int ChangeValue(int value);
@@ -42,6 +44,15 @@ internal class Program
         Console.WriteLine();
     }
 
+    // initialize array method
+    static void Initialize(int[] array, Func<int, int> init)
+    {
+        for (int i = 0; i < array.Length; i++)
+        {
+            array[i] = init(i);
+        }
+    }
+
     private static void Main(string[] args)
     {
         // ------- set delegate
@@ -77,8 +88,10 @@ internal class Program
         //operation = delegate (double a, double b) { Console.WriteLine($"{a} + {b} = {a + b}"); };
         operation = (a, b) => Console.WriteLine($"{a} + {b} = {a + b}");
 
-        ChangeArray(numbers, (num) => num + 10);
-        ShowArray(numbers, "Changed array");
+        //Initialize(numbers, (i) => i * 3);
+        //Initialize(numbers, (i) => new Random().Next(100));
+        Initialize(numbers, (i) => (int)Math.Pow(2, i));
+        ShowArray(numbers, "Initialized array");
 
         ChangeArray(numbers, (num) => num * num);
         ShowArray(numbers, "Changed array");
@@ -92,6 +105,6 @@ internal class Program
 
         // with return type
         Func<string, string> func = (name) => $"Hello, dear {name}!";
-        func("Vlad");
+        Console.WriteLine(func("Vlad"));
     }
 }
