@@ -5,6 +5,11 @@ class Program
 {
     static void Main(string[] args)
     {
+        // Example:
+        // email address: \w{2,}@\w+.\w+
+        // phone number: \+380\(\d{2}\)\d{3}\-?\d{2}\-?\d{2}
+        // word: [A-Z]\w+\-?\w*
+
         Regex regex = null;
 
         // ^ - початок тексту повинен відповідати шаблону
